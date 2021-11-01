@@ -1,5 +1,13 @@
 use std::time::{Instant, Duration};
 
+pub fn start() -> Timer<'static> {
+    Timer::start()
+}
+
+pub fn start_with_label<'a>(label: &'a str) -> Timer<'a> {
+    Timer::with_label(label)
+}
+
 pub struct Timer<'a> {
     start: Instant,
     label: Option<&'a str>,
